@@ -1,0 +1,15 @@
+{# layout.html.twigを継承(読み込み) #}
+{% extends 'TemplateLonelyBundle::layout.html.twig' %}
+
+{# ページタイトルを設定 #}
+{% block title %}Title{% endblock %}
+
+{# このページだけで使用するCSSファイルの設定 #}
+{% block stylesheet %}
+    <link href="{{ asset('/css/sample.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{# このページだけで使用するJavascriptファイルの設定 #}
+{% block javascript %}
+    <script type="text/javascript" src="{{ asset('/js/sample.js') }}"></script>
+{% endblock %}

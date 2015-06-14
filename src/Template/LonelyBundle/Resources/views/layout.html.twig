@@ -1,0 +1,33 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {# 共通のCSSを定義 #}
+    <link href="{{ asset('/css/style.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/css/common.css') }}" rel="stylesheet" type="text/css" />
+    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/cepertino/jquery-ui.css" rel="stylesheet" />
+    {% block stylesheet %}{% endblock %}
+{% endblock %}
+
+{% block javascripts %}
+    {# 共通のJavascriptを定義 #}
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/js/main.js') }}"></script>
+    {% block javascript %}{% endblock %}
+{% endblock %}
+
+{% block content %}
+    {% block header %}
+    <div id="header">
+        {# ヘッダー部 サイトロゴ、サイトタイトル、トップメニュー、ログアウトなど #}
+    </div><!-- / #header -->
+    {% endblock %}
+
+    {% block footer %}
+        <div id="footer">
+            <div class="footer_navi">
+                <p id="copyright">Copyright &copy; 2015 www.starlod.net All Rights Reserved.</p>
+            </div>
+        </div><!-- / #footer -->
+    {% endblock %}
+{% endblock %}
