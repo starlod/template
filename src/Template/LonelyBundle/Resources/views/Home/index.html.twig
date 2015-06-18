@@ -2,14 +2,10 @@
 {% extends 'TemplateLonelyBundle::layout.html.twig' %}
 
 {# ページタイトルを設定 #}
-{% block title %}Title{% endblock %}
+{% block title %}ホーム{% endblock %}
 
-{# このページだけで使用するCSSファイルの設定 #}
 {% block stylesheet %}
-    <link href="{{ asset('/css/sample.css') }}" rel="stylesheet" type="text/css" />
 {% endblock %}
 
-{# このページだけで使用するJavascriptファイルの設定 #}
 {% block javascript %}
-    <script type="text/javascript" src="{{ asset('/js/sample.js') }}"></script>
 {% endblock %}

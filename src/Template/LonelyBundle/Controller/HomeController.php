@@ -20,7 +20,6 @@ class HomeController extends Controller
      */
     public function indexAction()
     {
-        // return array();
         return $this->render('TemplateLonelyBundle:Home:index.html.twig');
     }
 }

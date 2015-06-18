@@ -1,33 +1,48 @@
 {% extends '::base.html.twig' %}
 
 {% block stylesheets %}
-    {# 共通のCSSを定義 #}
-    <link href="{{ asset('/css/style.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/css/common.css') }}" rel="stylesheet" type="text/css" />
-    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/cepertino/jquery-ui.css" rel="stylesheet" />
+    {# Lonely #}
+    <link href="{{ asset('bundles/templatelonely/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('bundles/templatelonely/bootstrap/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('bundles/templatelonely/bootstrap/css/nivo-lightbox.css') }}" rel="stylesheet" />
+    <link href="{{ asset('bundles/templatelonely/bootstrap/css/nivo-lightbox-theme/default/default.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('bundles/templatelonely/bootstrap/css/owl.carousel.css') }}" rel="stylesheet" media="screen" />
+    <link href="{{ asset('bundles/templatelonely/bootstrap/css/owl.theme.css') }}" rel="stylesheet" media="screen" />
+    <link href="{{ asset('bundles/templatelonely/bootstrap/css/animate.css') }}" rel="stylesheet" />
+    <link href="{{ asset('bundles/templatelonely/bootstrap/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/templatelonely/bootstrap/color/default.css') }}" rel="stylesheet">
+    {# 他CSS #}
+{#     {% stylesheets '@TemplateLonelyBundle/Resources/public/css/*' %}
+        <link rel="stylesheet" href="{{ asset_url }}">
+    {% endstylesheets %} #}
     {% block stylesheet %}{% endblock %}
 {% endblock %}
 
 {% block javascripts %}
-    {# 共通のJavascriptを定義 #}
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="{{ asset('/js/main.js') }}"></script>
+    <!-- Core JavaScript Files -->
+    <script src="{{ asset('bundles/templatelonely/bootstrap/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('bundles/templatelonely/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bundles/templatelonely/bootstrap/js/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('bundles/templatelonely/bootstrap/js/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('bundles/templatelonely/bootstrap/js/jquery.scrollTo.js') }}"></script>
+    <script src="{{ asset('bundles/templatelonely/bootstrap/js/stellar.js') }}"></script>
+    <script src="{{ asset('bundles/templatelonely/bootstrap/js/wow.min.js') }}"></script>
+    <script src="{{ asset('bundles/templatelonely/bootstrap/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('bundles/templatelonely/bootstrap/js/nivo-lightbox.min.js') }}"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ asset('bundles/templatelonely/bootstrap/js/custom.js') }}"></script>
+
     {% block javascript %}{% endblock %}
 {% endblock %}
 
 {% block content %}
-    {% block header %}
-    <div id="header">
-        {# ヘッダー部 サイトロゴ、サイトタイトル、トップメニュー、ログアウトなど #}
-    </div><!-- / #header -->
-    {% endblock %}
-
-    {% block footer %}
-        <div id="footer">
-            <div class="footer_navi">
-                <p id="copyright">Copyright &copy; 2015 www.starlod.net All Rights Reserved.</p>
-            </div>
-        </div><!-- / #footer -->
-    {% endblock %}
+    {% include "TemplateLonelyBundle::_preloader.html.twig" %}
+    {% include "TemplateLonelyBundle::_intro.html.twig" %}
+    {% include "TemplateLonelyBundle::_navigation.html.twig" %}
+    {% include "TemplateLonelyBundle::_about.html.twig" %}
+    {% include "TemplateLonelyBundle::_separator.html.twig" %}
+    {% include "TemplateLonelyBundle::_gallery.html.twig" %}
+    {% include "TemplateLonelyBundle::_contact.html.twig" %}
+    {% include "TemplateLonelyBundle::_footer.html.twig" %}
 {% endblock %}
+
