@@ -1,5 +1,5 @@
 <?php
-namespace Template\LonelyBundle\Controller;
+namespace Template\EnnoBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -9,18 +9,17 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 /**
- * @Route("/lonely")
+ * @Route("/enno")
  */
 class HomeController extends Controller
 {
     /**
-     * @Route("/", name="home_index")
+     * @Route("/", name="enno_home_index")
      * @Method("GET")
      * @Template()
      */
     public function indexAction()
     {
         return array();
-        // return $this->render('TemplateLonelyBundle:Home:index.html.twig');
     }
 }
