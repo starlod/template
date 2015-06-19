@@ -12,8 +12,9 @@
     <link href="{{ asset('bundles/templatelonely/bootstrap/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('bundles/templatelonely/bootstrap/color/default.css') }}" rel="stylesheet">
     {# 他CSS #}
-{#     {% stylesheets '@TemplateLonelyBundle/Resources/public/css/*' %}
-        <link rel="stylesheet" href="{{ asset_url }}">
+    <link href="{{ asset('bundles/templatecommon/css/style.css') }}" rel="stylesheet">
+{#     {% stylesheets '@TemplateCommonBundle/Resources/public/css/*' %}
+        <link href="{{ asset_url }}" rel="stylesheet">
     {% endstylesheets %} #}
     {% block stylesheet %}{% endblock %}
 {% endblock %}
@@ -37,12 +38,11 @@
 
 {% block contents %}
     {# 共通ヘッダー #}
-    {% include "TemplateLonelyBundle::_preloader.html.twig" %}
-    {% include "TemplateLonelyBundle::_intro.html.twig" %}
-    {% include "TemplateLonelyBundle::_navigation.html.twig" %}
+    {% include "TemplateCommonBundle::_preloader.html.twig" %}
+    {% include "TemplateCommonBundle::_intro.html.twig" %}
+    {% include "TemplateCommonBundle::_navigation.html.twig" %}
     {# 個々のコンテンツ #}
     {% block content %}{% endblock %}
     {# 共通フッター #}
-    {% include "TemplateLonelyBundle::_contact.html.twig" %}
-    {% include "TemplateLonelyBundle::_footer.html.twig" %}
+    {% include "TemplateCommonBundle::_footer.html.twig" %}
 {% endblock %}

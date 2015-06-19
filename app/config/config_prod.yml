@@ -11,15 +11,35 @@ imports:
 #        result_cache_driver: apc
 #        query_cache_driver: apc
 
+#monolog:
+#    handlers:
+#        main:
+#            type:         fingers_crossed
+#            action_level: error
+#            handler:      nested
+#        nested:
+#            type:  stream
+#            path:  "%kernel.logs_dir%/%kernel.environment%.log"
+#            level: debug
+#        console:
+#            type:  console
+
 monolog:
     handlers:
         main:
-            type:         fingers_crossed
-            action_level: error
-            handler:      nested
-        nested:
-            type:  stream
-            path:  "%kernel.logs_dir%/%kernel.environment%.log"
-            level: debug
+            type:   rotating_file
+            max_files: 10
+            path:   "%kernel.logs_dir%/%kernel.environment%.log"
+            level:  debug
+            channels: !event
+            formatter: log_formatter
         console:
-            type:  console
+            type:   console
+            bubble: false
+
+services:
+    log_formatter:
+       class: Monolog\Formatter\LineFormatter
+       arguments:
+           - "[%%datetime%%] %%channel%%.%%level_name%%: %%context%% %%extra%%: %%message%%\n"
+

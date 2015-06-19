@@ -9,3 +9,9 @@
 
 {% block javascript %}
 {% endblock %}
+
+{% block content %}
+    {% include "TemplateLonelyBundle::_about.html.twig" %}
+    {% include "TemplateLonelyBundle::_separator.html.twig" %}
+    {% include "TemplateLonelyBundle::_gallery.html.twig" %}
+{% endblock %}

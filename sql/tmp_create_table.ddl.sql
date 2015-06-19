@@ -1,5 +1,18 @@
 use tmp
 
+-- media
+DROP TABLE IF EXISTS media CASCADE;
+CREATE TABLE media (
+    id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+    name   varchar(255),
+    url    varchar(255),
+    image  varchar(255),
+    target varchar(25),
+    rating int(11) DEFAULT 0,
+    description varchar(255),
+    PRIMARY KEY (id)
+);
+
 DROP TABLE IF EXISTS options CASCADE;
 CREATE TABLE options (
     id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -8,6 +21,15 @@ CREATE TABLE options (
     PRIMARY KEY (id),
     UNIQUE KEY option_name (name)
 );
+
+INSERT INTO options(name, value) VALUES('siteurl', 'http://localhost:8888');
+INSERT INTO options(name, value) VALUES('home', 'http://localhost:8888');
+INSERT INTO options(name, value) VALUES('blogname', 'template');
+INSERT INTO options(name, value) VALUES('blogdescription', 'template');
+INSERT INTO options(name, value) VALUES('posts_per_rss', '10');
+INSERT INTO options(name, value) VALUES('posts_per_page', '10');
+
+
 
 DROP TABLE IF EXISTS register CASCADE;
 CREATE TABLE register (
