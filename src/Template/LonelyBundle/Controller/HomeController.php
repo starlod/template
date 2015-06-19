@@ -14,13 +14,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class HomeController extends Controller
 {
     /**
-     * @Route("/", name="home_index")
+     * @Route("/", name="lonely_home_index")
      * @Method("GET")
      * @Template()
      */
     public function indexAction()
     {
         return array();
-        // return $this->render('TemplateLonelyBundle:Home:index.html.twig');
     }
 }
